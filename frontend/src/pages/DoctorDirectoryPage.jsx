@@ -161,9 +161,21 @@ function DoctorDirectoryPage() {
         }
       }
 
-      // Speciality Multi-Select Filter
+      // Speciality Multi-Select Filter (matches exact specialization, department, or reciprocal keyword)
       if (selectedSpecialities.length > 0) {
-        if (!selectedSpecialities.includes(doc.specialization)) {
+        const matchesSpec = selectedSpecialities.some((s) => {
+          if (doc.specialization === s || doc.department === s) return true;
+          const sLower = s.toLowerCase();
+          const specLower = (doc.specialization || '').toLowerCase();
+          const deptLower = (doc.department || '').toLowerCase();
+          return (
+            specLower.includes(sLower) ||
+            sLower.includes(specLower) ||
+            deptLower.includes(sLower) ||
+            sLower.includes(deptLower)
+          );
+        });
+        if (!matchesSpec) {
           return false;
         }
       }

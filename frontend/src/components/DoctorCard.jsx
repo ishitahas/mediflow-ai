@@ -3,37 +3,55 @@ import { Link } from 'react-router-dom';
 
 // High-resolution clinical portraits for verified medical specialist directory
 export const DOCTOR_PORTRAITS = {
-  'Dr. Ketan Vartak':
-    'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80',
-  'Dr. Rajesh Parasnis':
-    'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80',
-  'Dr. Naresh Munot':
-    'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80',
-  'Dr. Smruti Hindaria':
-    'https://images.unsplash.com/photo-1594824813589-b14cf6df5331?auto=format&fit=crop&w=400&q=80',
-  'Dr. Sunil Jawale':
-    'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80',
-  'Dr. Vidita Powle':
-    'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80',
-  'Dr. Suyog Doshi':
-    'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80',
-  'Dr. Ananya Patel':
-    'https://images.unsplash.com/photo-1594824813608-251f92e3425e?auto=format&fit=crop&w=400&q=80',
   'Dr. Rajesh Sharma':
     'https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=400&q=80',
+  'Dr. Ananya Patel':
+    'https://images.unsplash.com/photo-1594824813608-251f92e3425e?auto=format&fit=crop&w=400&q=80',
+  'Dr. Sunil Jawale':
+    'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80',
+  'Dr. Rajesh Parasnis':
+    'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80',
+  'Dr. Vidita Powle':
+    'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80',
+  'Dr. Priya Sundaram':
+    'https://images.unsplash.com/photo-1594824813589-b14cf6df5331?auto=format&fit=crop&w=400&q=80',
+  'Dr. Arvind Kulkarni':
+    'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80',
+  'Dr. Meera Nambiar':
+    'https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=400&q=80',
+  'Dr. Ketan Vartak':
+    'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80',
+  'Dr. Rohan Deshmukh':
+    'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80',
+  'Dr. Kavita Singhania':
+    'https://images.unsplash.com/photo-1594824813608-251f92e3425e?auto=format&fit=crop&w=400&q=80',
+  'Dr. Naresh Munot':
+    'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80',
+  'Dr. Pooja Hegde':
+    'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80',
+  'Dr. Smruti Hindaria':
+    'https://images.unsplash.com/photo-1594824813589-b14cf6df5331?auto=format&fit=crop&w=400&q=80',
+  'Dr. Suyog Doshi':
+    'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80',
 };
 
 // MediFlow AI Verified Specialist Clinical Designations
 export const DOCTOR_HEADLINES = {
-  'Dr. Ketan Vartak': 'Senior Consultant Urologist',
-  'Dr. Rajesh Parasnis': 'Senior Orthopedic & Spine Surgeon',
-  'Dr. Naresh Munot': 'Consultant Cardiologist',
+  'Dr. Rajesh Sharma': 'Senior Consultant Cardiologist',
+  'Dr. Ananya Patel': 'Senior Consultant Neurologist',
+  'Dr. Sunil Jawale': 'Senior Consultant Nephrologist',
+  'Dr. Rajesh Parasnis': 'Chief Orthopedic & Spine Surgeon',
+  'Dr. Vidita Powle': 'Consultant Dermatologist & Cosmetologist',
+  'Dr. Priya Sundaram': 'Senior Consultant Pediatrician',
+  'Dr. Arvind Kulkarni': 'Lead Consultant Internal Medicine',
+  'Dr. Meera Nambiar': 'Senior Consultant Obstetrician & Gynecologist',
+  'Dr. Ketan Vartak': 'Senior Dental & Maxillofacial Surgeon',
+  'Dr. Rohan Deshmukh': 'Consultant Ophthalmologist & Cataract Surgeon',
+  'Dr. Kavita Singhania': 'Senior Consultant Psychiatrist',
+  'Dr. Naresh Munot': 'Senior Consultant ENT Surgeon',
+  'Dr. Pooja Hegde': 'Lead Physiotherapist & Rehabilitation Specialist',
   'Dr. Smruti Hindaria': 'Consultant CTVS Surgeon',
-  'Dr. Sunil Jawale': 'Consultant Nephrologist',
-  'Dr. Vidita Powle': 'Senior Consultant Oncologist',
   'Dr. Suyog Doshi': 'Senior Consultant Neurosurgeon',
-  'Dr. Rajesh Sharma': 'Consultant Cardiologist',
-  'Dr. Ananya Patel': 'Consultant Neurologist',
 };
 
 // Helper to determine next authentic slot window from real doctor availability records

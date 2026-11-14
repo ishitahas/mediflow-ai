@@ -81,7 +81,12 @@ function HomePage() {
       );
     }
     if (selectedSpeciality !== 'ALL') {
-      list = list.filter((d) => d.specialization === selectedSpeciality);
+      const s = selectedSpeciality.toLowerCase();
+      list = list.filter((d) => {
+        const spec = (d.specialization || '').toLowerCase();
+        const dept = (d.department || '').toLowerCase();
+        return spec === s || dept === s || spec.includes(s) || s.includes(spec) || dept.includes(s) || s.includes(dept);
+      });
     }
     return list;
   }, [doctors, searchQuery, selectedSpeciality]);
