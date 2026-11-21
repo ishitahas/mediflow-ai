@@ -55,6 +55,7 @@ function DoctorDirectoryPage() {
   const [selectedCity, setSelectedCity] = useState('Pune');
   const [selectedPresence, setSelectedPresence] = useState('ALL');
   const [selectedExperience, setSelectedExperience] = useState('ALL');
+  const [sortBy, setSortBy] = useState('DEFAULT');
 
   // Modals & Feedback
   const [callModalDoctor, setCallModalDoctor] = useState(null);
@@ -196,6 +197,19 @@ function DoctorDirectoryPage() {
     });
   }, [doctors, searchQuery, selectedSpecialities, selectedPresence, selectedExperience]);
 
+  // Sorting applied after filtering
+  const sortedDoctors = useMemo(() => {
+    const list = [...filteredDoctors];
+    if (sortBy === 'EXPERIENCE_DESC') {
+      list.sort((a, b) => (b.experience || 0) - (a.experience || 0));
+    } else if (sortBy === 'FEE_ASC') {
+      list.sort((a, b) => (a.consultationFee || 0) - (b.consultationFee || 0));
+    } else if (sortBy === 'NAME_ASC') {
+      list.sort((a, b) => (a.user?.name || '').localeCompare(b.user?.name || ''));
+    }
+    return list;
+  }, [filteredDoctors, sortBy]);
+
   // Clear all filters
   const handleClearAll = () => {
     setSearchQuery('');
@@ -204,6 +218,7 @@ function DoctorDirectoryPage() {
     setSelectedCity('Pune');
     setSelectedPresence('ALL');
     setSelectedExperience('ALL');
+    setSortBy('DEFAULT');
   };
 
   // Share doctor profile handler
@@ -458,6 +473,16 @@ function DoctorDirectoryPage() {
                     Present in Hospital
                   </span>
                 </label>
+                <label className="flex items-center gap-2 px-2 py-1 rounded-lg hover:bg-gray-50 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="presence"
+                    checked={selectedPresence === 'ACCEPTING'}
+                    onChange={() => setSelectedPresence('ACCEPTING')}
+                    className="text-[#0072CE] cursor-pointer"
+                  />
+                  <span>Accepting Patients (not offline)</span>
+                </label>
               </div>
             </div>
 
@@ -521,6 +546,26 @@ function DoctorDirectoryPage() {
           {/* RIGHT MAIN CONTENT: Doctor Cards Grid                         */}
           {/* ============================================================= */}
           <div className="flex-1 w-full">
+            {/* Sort dropdown */}
+            {!loading && filteredDoctors.length > 0 && (
+              <div className="flex items-center justify-end gap-2 mb-4">
+                <label htmlFor="sortBy" className="text-xs font-bold text-gray-600">
+                  Sort by:
+                </label>
+                <select
+                  id="sortBy"
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="text-xs font-medium bg-white border border-gray-300 rounded-lg px-3 py-1.5 outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="DEFAULT">Relevance</option>
+                  <option value="EXPERIENCE_DESC">Experience: High to Low</option>
+                  <option value="FEE_ASC">Consultation Fee: Low to High</option>
+                  <option value="NAME_ASC">Name: A to Z</option>
+                </select>
+              </div>
+            )}
+
             {loading ? (
               <div className="py-24 text-center space-y-3 bg-white rounded-2xl border border-gray-200">
                 <div className="w-10 h-10 border-4 border-[#0072CE] border-t-transparent rounded-full animate-spin mx-auto"></div>
@@ -544,7 +589,7 @@ function DoctorDirectoryPage() {
             ) : (
               /* Doctor Cards 2-Column Responsive Grid */
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
-                {filteredDoctors.map((doctor) => (
+                {sortedDoctors.map((doctor) => (
                   <DoctorCard
                     key={doctor.id}
                     doctor={doctor}
