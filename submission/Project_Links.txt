@@ -1,0 +1,90 @@
+================================================================================
+                    MEDIFLOW AI — MAJOR PROJECT SUBMISSION LINKS
+================================================================================
+
+Project Title:
+  MediFlow AI — Smart Hospital Appointment & Doctor Availability Management System
+
+Candidate / Author:
+  Sachit Yadav
+
+Academic Context:
+  B.Tech / University Major Project Submission
+
+================================================================================
+1. PRIMARY PROJECT REPOSITORY & LIVE DEPLOYMENT
+================================================================================
+
+• GitHub Source Code Repository:
+  https://github.com/sachityadav-2007/mediflow-ai
+
+• Live Web Application (Vercel Production):
+  https://mediflow-ai-app.vercel.app
+
+• Backend REST API Gateway (Render Node.js / Express):
+  https://mediflow-api-bz27.onrender.com
+  Health Endpoint: https://mediflow-api-bz27.onrender.com/api/health
+
+• Machine Learning Microservice (Render Python / FastAPI):
+  https://mediflow-ml-service.onrender.com
+  Health Endpoint: https://mediflow-ml-service.onrender.com/health
+
+• Production Database:
+  Serverless PostgreSQL on Neon (AWS us-east-2 / Prisma ORM)
+
+================================================================================
+2. VERIFIED WORKING APPLICATION ROUTES (PRODUCTION)
+================================================================================
+
+• Landing & System Health Page:
+  https://mediflow-ai-app.vercel.app/
+
+• Interactive Doctors Directory (Search, Specialty Filter, Real-Time Badges):
+  https://mediflow-ai-app.vercel.app/doctors
+
+• Online Appointment Booking (30-min Discrete Slot Engine):
+  https://mediflow-ai-app.vercel.app/book
+
+• My Appointments (Booking Confirmation, History, Digital QR Check-In Pass):
+  https://mediflow-ai-app.vercel.app/my-appointments
+
+• Patient Portal Dashboard (Upcoming Visits, Consultation Status):
+  https://mediflow-ai-app.vercel.app/patient/dashboard
+
+• Smart Waitlist Queue & Priority Triage:
+  https://mediflow-ai-app.vercel.app/waitlist
+
+• AI Health Assistant & Smart Symptom Triage:
+  https://mediflow-ai-app.vercel.app/health-assistant
+
+• Authentication & Portal Access:
+  https://mediflow-ai-app.vercel.app/login
+  https://mediflow-ai-app.vercel.app/register
+
+================================================================================
+3. VIVA & DEMO EVALUATION TEST CREDENTIALS
+================================================================================
+
+All test accounts are pre-seeded in the production database with realistic data:
+
+1. Hospital Administrator (Full Control Center & Governance):
+   - Email:    admin@mediflow.com
+   - Password: password123
+   - Capabilities: Hospital analytics, doctor & patient management, smart waitlist
+                   auto-allocation trigger, reception OPD check-in.
+
+2. Medical Consultant / Doctor (Clinical Portal):
+   - Email:    dr.sharma@mediflow.com
+   - Password: password123
+   - Capabilities: Daily appointment schedule, clinic presence toggle (Present,
+                   Busy, Away, Offline), patient consultation management.
+
+3. Verified Patient:
+   - Email:    rahul.verma@example.com
+   - Password: password123
+   - Capabilities: Specialist search, slot booking, QR pass generation, smart
+                   waitlist registration, AI symptom triage.
+
+* Note: The login page also provides 1-click Quick Demo buttons to populate credentials instantly.
+================================================================================
+
